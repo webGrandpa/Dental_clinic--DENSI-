@@ -65,21 +65,19 @@ header {
             
             a {
                 letter-spacing: 2px;
+                color:#516EFF;
+                @include font_properties(normal, 16px, #52525B );
 
-                li{
-                    @include font_properties(normal, 16px, #52525B );
-
-                    &:hover{
-                        cursor: pointer;
-                        color: #516EFF;
-                        transform: scale(1.02);
-                        transition: 0.3s ease-in-out;
-                    }
-                    &:active{
-                        color: #516effc6;
-                        transform: scale(0.99);
-                        transition: 0.3s ease-in-out;
-                    }
+                &:hover{
+                    cursor: pointer;
+                    color: #516EFF;
+                    transform: scale(1.02);
+                    transition: 0.3s ease-in-out;
+                }
+                &:active{
+                    color: #516effc6;
+                    transform: scale(0.99);
+                    transition: 0.3s ease-in-out;
                 }
             }
         }
@@ -242,6 +240,8 @@ header {
     width: 100%;
     height: 170px;
     background:#516EFF;
+    display: flex;
+    flex-wrap: wrap;
 
     .providing-items{
         height: 100%;
@@ -302,7 +302,8 @@ header {
         width: 100%;
         height: auto;
         gap: 100px;
-        @include display_properties(flex, center, center, row);
+        @include display_properties(flex, center, center, -direction);
+        // flex-wrap: wrap;
 
         .providing-info_illustration{
             width: 50%;
@@ -372,13 +373,12 @@ header {
                 }
             }
         }
-
     }
 }
 
-.abilities{
-    
-    @include display_properties(flex, center, center, column);
+
+.abilities{   
+    @include display_properties(flex, center, center, row);
 
     .abilities-text{
         @include display_properties(flex, center, center, row);
